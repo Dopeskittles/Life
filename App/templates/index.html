@@ -5,6 +5,69 @@
 {{ super() }}
 
 {% block content %}
-    <h1>Flask MVC</h1>
-    <p>This is a boileplate flask application which follows the MVC pattern for structuring the project.</p>
+
+<div class="title-text">
+    <div>
+        <h1>Welcome to Vaxing-U</h1>
+        <p>Description</p>
+    </div>
+</div>
+
+    
+
+<section class="section_1">
+
+    <h2>Vaccines</h2>
+<div class="wrapper">
+    
+<div class="card">
+    <img src="../static/images/1.gif">
+    <div class="info">
+            <h1>Pfizer</h1>
+            <p>Description</p>
+            <a href="/pfizer" class="btn">View Item</a>
+        </div>
+    </div>	
+  
+<div class="card">
+    <img src="../static/images/2.gif">
+    <div class="info">
+            <h1>Sinopharm</h1>
+            <p>Description</p>
+            <a href="/sinopharm" class="btn">View Item</a>
+        </div>
+    </div>
+  
+<div class="card">
+    <img src="../static/images/vaccine_2.gif">
+        <div class="info">
+            <h1>Astrazeneca</h1>
+            <p>Description</p>
+            <a href="/astrazeneca" class="btn">View Item</a>
+        </div>
+    </div>
+  
+<div class="card">
+    <img src="../static/images/vaccine_3.gif">
+    <div class="info">
+            <h1>Johnson & Johnson</h1>
+            <p>Description</p>
+            <a href="/jj" class="btn">View Item</a>
+        </div>
+    </div>
+    </section>
+
+    <div class="card_api card1">
+        <h1>Current Covid-19 Statistics</h1>
+        <p>Country: {{data.response[0]['country']}}</p>
+        <p>Population: {{data.response[0]['population']}}</p>
+        <p>Active Cases: {{data.response[0]['cases']['active']}}</p>
+        <p>Critical Cases: {{data.response[0]['cases']['critical']}}</p>
+        <p>Recovered Cases: {{data.response[0]['cases']['recovered']}}</p>
+        <p>Total Cases: {{data.response[0]['cases']['total']}}</p>
+        <p>Total Deaths: {{data.response[0]['deaths']['total']}}</p>
+        <p>Active Cases: {{data.response[0]['tests']['total']}}</p>
+        <p>Active Cases: {{data.response[0]['day']}}</p>
+    </div>
+
 {% endblock %}

@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+{{ super() }}
+
+
+    {% block content %}
+    <div class="contact-title">
+      <h1>Thank You For Choosing Vaxing You</h1>
+      <h2>Please Make Necessary Changes To The Medical Form To Continue</h2>
+    </div>
+    
+    <section class="request">
+    <div class="signup-Form">
+     <form id="myForm" method="POST" action="/updateFile">
+            {{ myForm.csrf_token }}
+
+            <div class="inputBox"> 
+                {{ myForm.birthID(size=20, class="validate") }}
+                <!-- {{ myForm.birthID.label }}-->
+               <span>Birth ID</span>
+            </div>
+
+            <div class="inputBox"> 
+              {{ myForm.firstname(size=20, class="validate") }}
+              <!--{{ myForm.firstname.label }}-->
+              <span>First Name</span>
+            </div>
+
+            <div class="inputBox"> 
+                {{ myForm.middlename(size=20, class="validate") }}
+                <!--{{ myForm.middlename.label }}-->
+                <span>Middle Name</span>
+              </div>
+            
+            <div class="inputBox">
+              {{ myForm.lastname(size=20, class="validate") }}
+              <!--{{ myForm.lastname.label }}-->
+              <span>Last Name</span>
+            </div>
+
+            <div class="inputBox">
+              {{ myForm.birthPlace(size=120, class="validate") }}
+              <!--{{ myForm.birthPlace.label }}-->
+              <span>Place of Birth</span>
+            </div>
+
+            <div class="inputBox">
+                {{ myForm.DateOfBirth(size=20, class="validate") }}
+                <!--{{ myForm.DateOfBirth.label }}-->
+                <span>Date of Birth</span>
+            </div>
+
+            <div class="inputBox">
+                {{ myForm.Sex(size=20, class="validate") }}
+                <!--{{ myForm.Sex.label }}-->
+                <span>Sex (Gender)</span>
+            </div>
+
+            <div class="inputBox">
+              {{ myForm.Condition1(size=50, class="validate") }}
+              <!--{{ myForm.Condition1.label }}-->
+              <span>Condition One</span>
+          </div>
+
+          <div class="inputBox">
+            {{ myForm.Condition2(size=50, class="validate") }}
+            <!--{{ myForm.Condition2.label }}-->
+            <span>Condition Two</span>
+        </div>
+        <div class="inputBox">
+          {{ myForm.Condition3(size=50, class="validate") }}
+          <!--{{ myForm.Condition3.label }}-->
+          <span>Condition Three</span>
+      </div>
+
+            <div>
+              {{myForm.submit}}
+              <a href="/updateFile">
+                <input class="btn"  type="button" onclick='' value="Update Medical Data">
+                </a>
+            </div> 
+        </form>
+      </div>
+    </section>
+    {% endblock %}
+    
+
+    
+   

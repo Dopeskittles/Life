@@ -1,0 +1,61 @@
+{% extends "signup_layout.html" %}
+{{ super() }}
+
+
+  
+
+  {% block content %}
+    {% if current_user.is_authenticated %}
+    
+    <div class="contact-title">
+	  <h1>Your Medical Information</h1>
+    </div>
+
+    <section class="request">
+    <div class="signup-Form">
+    <table>
+      <tr>
+        <th>Birth ID:</th>
+        <th>{{ data.birthID }}</th>
+      </tr>
+      <tr>
+        <th>First Name:</th>
+        <th>{{ data.firstname }}</th>
+      </tr>
+      <th>Middle Name:</th>
+        <th>{{ data.middlename }}</th>
+      </tr>
+      <th>Last Name:</th>
+        <th>{{ data.lastname }}</th>
+      </tr>
+      <th>Place Of Birth:</th>
+        <th>{{ data.birthPlace }}</th>
+      </tr>
+      <th>Date Of Birth:</th>
+        <th>{{ data.DateOfBirth }}</th>
+      </tr>
+      <th>Sex:</th>
+        <th>{{ data.Sex }}</th>
+      </tr>
+      <th>Condition:</th>
+        <th>{{ data.Condition1 }}</th>
+      </tr>
+      <th>Condition:</th>
+        <th>{{ data.Condition2 }}</th>
+      </tr>
+      <th>Condition:</th>
+        <th>{{ data.Condition3 }}</th>
+      </tr>
+      
+   
+    </table>   
+    
+      <div>
+        <a href="/update">
+          <input class="btn"  type="button" onclick='' value="Change Medical Data">
+          </a>
+      </div>
+    </div>
+    </section>
+    {% endif %} 
+    {% endblock %}
